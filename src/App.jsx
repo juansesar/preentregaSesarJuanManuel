@@ -1,13 +1,15 @@
 
 import './App.css';
 import React from 'react'; 
-import NavBar from './components/NavBar';
+import NavBar from './components/navBar';
+import ItemListConteiner from './container/ItemListConteiner';
+
 
 function App() {
   return (
     <>
     <NavBar/>
-    <itemListConteiner/>
+    <ItemListConteiner/>
     </>
 
   );
