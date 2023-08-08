@@ -1,9 +1,21 @@
 .nav{
     display: grid;
     grid-template-columns: 30% 70%;
-
+    background-color: brown;
+    align-items: end;
+    justify-content: end;
 }
 
+.navegador{
+    align-items: end;
+    justify-content: end;
+    font-size: 90%;
+    font-style: none;
+}
+
+.logo{
+    font-size: 150%;
+}
 .logo{
     display: flex;
     flex-direction: row;

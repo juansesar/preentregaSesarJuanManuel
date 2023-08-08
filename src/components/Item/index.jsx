@@ -1,10 +1,10 @@
 import styles from "./styles.module.css"
 
-const Item = ({nombre}) => {
+const Item = ({nombre, deleteitem}) => {
     return(
         <div className={styles["contenedor"]}>
             <p>{nombre}</p>
-            <button>Borrar</button>
+            <button onClick={() => deleteitem(nombre)} >Borrar</button>
         </div>
         )
 }
