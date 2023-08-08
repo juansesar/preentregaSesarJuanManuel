@@ -1,7 +1,7 @@
 
 import './App.css';
 import React from 'react'; 
-import NavBar from './components/navBar';
+import NavBar from './components/NavBar';
 import ItemListConteiner from './container/ItemListConteiner';
 
 

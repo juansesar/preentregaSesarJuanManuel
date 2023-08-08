@@ -14,7 +14,7 @@ const ItemListConteiner = () => {
             {listaDeCompras.length > 0 ? (
                 <>
                 {
-                    listaDeCompras.map(producto => <Item/>)
+                    listaDeCompras.map(producto => <Item nombre={producto}/>)
                 }
                 </>
                 ):(

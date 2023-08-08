@@ -1,5 +1,15 @@
-#logo{
+.nav{
+    display: grid;
+    grid-template-columns: 30% 70%;
+
+}
+
+.logo{
     display: flex;
     flex-direction: row;
-    padding: 0%;
+    padding: 5%;
+}
+
+.navegador a {
+    padding: 10%;
 }
