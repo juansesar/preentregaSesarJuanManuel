@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
-import ItemDetail from '../ItemDetail/index'
+import ItemDetail from './index'
 
 export default function ItemDetail() {
     const [detail, setDetail] = useState({})

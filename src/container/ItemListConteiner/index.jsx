@@ -8,7 +8,7 @@ import Row from 'react-bootstrap/Row'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 
-export default function ItemListContainer() {
+function ItemListContainer() {
     const [items, sentItems] = useState([])
 
     const getProducto = async () => {
@@ -25,12 +25,12 @@ export default function ItemListContainer() {
                 {items.map(item => (
                     <Col key={item.id} lg={4} className="mb-4" >
                         <Card>
-                            <Card.img variant="top" src={item.imagen} />
-                            <Card.body>
+                            <Card.Img variant="top" src={item.imagen} />
+                            <Card.Body>
                                 <Card.Title>{item.producto}</Card.Title>
                                 <Card.Text>{item.precio}</Card.Text>
                                 <Button variant="dark"> ver mas</Button>
-                            </Card.body>
+                            </Card.Body>
                         </Card>
                     </Col>
                 ))
@@ -39,3 +39,5 @@ export default function ItemListContainer() {
         </Container>
     )
 }
+
+export default ItemListContainer
