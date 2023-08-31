@@ -1,33 +1,41 @@
-import { useState } from "react"
-import Item from "../../components/Item"
-import style from "./style.module.css"
 
-const ItemListConteiner = () => {
-    const [listaDeCompras, SetListaDeCompras] = useState([])
-    const [input, setInput] = useState("")
-    const addItem = () => {
-        SetListaDeCompras([...listaDeCompras, input])
+import Items from "../../components/Item"
+import React, { useState, useEffect } from 'react'
+import { useParams, Link } from 'react-router-dom'
+import Container from 'react-bootstrap/Container'
+import Col from 'react-bootstrap/Col'
+import Row from 'react-bootstrap/Row'
+import Button from 'react-bootstrap/Button'
+import Card from 'react-bootstrap/Card'
+
+export default function ItemListContainer() {
+    const [items, sentItems] = useState([])
+
+    const getProducto = async () => {
+        const response = await fetch("/data/base.json")
+        const productos = await response.json()
+        sentItems(productos)
     }
-    const deleteItem = (nombre) => {
-        const newListaDeCompras = listaDeCompras.filter((I) => I !== nombre)
-        SetListaDeCompras(newListaDeCompras)
-    }
-    return(
-        <div className={style["input"]}>
-            <input value={input} onChange={(event) => setInput(event.target.value)} />
-            <button onClick={addItem}>Guardar</button>
-            {listaDeCompras.length > 0 ? (
-                <>
-                {
-                    listaDeCompras.map(producto => <Item nombre={producto} deleteitem = {deleteItem}/>)
+    useEffect(() => {
+        getProducto()
+    }, [])
+    return (
+        <Container fluid className="nt-4">
+            <Row>
+                {items.map(item => (
+                    <Col key={item.id} lg={4} className="mb-4" >
+                        <Card>
+                            <Card.img variant="top" src={item.imagen} />
+                            <Card.body>
+                                <Card.Title>{item.producto}</Card.Title>
+                                <Card.Text>{item.precio}</Card.Text>
+                                <Button variant="dark"> ver mas</Button>
+                            </Card.body>
+                        </Card>
+                    </Col>
+                ))
                 }
-                </>
-                ):(
-                    <p>No hay productos</p>
-                )
-            }
-        </div>
+            </Row>
+        </Container>
     )
 }
-
-export default ItemListConteiner

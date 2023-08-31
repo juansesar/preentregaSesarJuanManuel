@@ -1,17 +1,11 @@
-import styles from "./styles.module.css"
 
-export default function Item() {
-    const [items, sentItems] = usestate([])
 
-    const getProducto = async () => {
-        const response = await fetch("/data/base.json")
-        const productos = await response.json()
-        sentItems(productos)
-    }
-    useEffect(() => {
-        getProducto()
-    }, [])
+
+export default function Item({ detail }) {
     return (
-        
+        <div>
+            <p>{detail.producto}</p>
+            <p>{detail.precio}</p>
+        </div>
     )
 }
