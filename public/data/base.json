@@ -1,0 +1,40 @@
+[
+    {
+        "id": 1,
+        "producto": "cerveza artesanal",
+        "precio": 3000,
+        "imagen": ""
+        
+    },
+    {
+        "id": 2,
+        "producto": "brahama rubia",
+        "precio": 4000,
+        "imagen": ""
+        
+    },
+    {
+        "id": 3,
+        "producto": "andes negra",
+        "precio": 1000,
+        "imagen": ""
+    },
+    {
+        "id": 4,
+        "producto": "andes ipa",
+        "precio": 1500,
+        "imagen": ""
+    },
+    {
+        "id": 5,
+        "producto": "andes origenes",
+        "precio": 4000,
+        "imagen": ""
+    },
+    {
+        "id": 6,
+        "producto": "grahama sin alcohol",
+        "precio": 3000,
+        "imagen": ""
+    }
+]
