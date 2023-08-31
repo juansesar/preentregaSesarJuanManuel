@@ -9,10 +9,10 @@ import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import style from './style.module.css'
 
+
 function ItemListContainer() {
     const [items, sentItems] = useState([])
-
-    const {id} = useState()
+    const {id} = useParams()
 
     
     useEffect(() => {
@@ -20,7 +20,7 @@ function ItemListContainer() {
             const response = await fetch("/data/base.json")
             const productos = await response.json()
     
-            const filtroProducto = productos.filter(producto => producto.categoria == id)
+            const filtroProducto = productos.filter(producto => producto.categoria === id)
             
             if (filtroProducto.length > 0) return sentItems(filtroProducto)
 
