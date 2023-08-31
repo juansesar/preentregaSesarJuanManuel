@@ -7,7 +7,7 @@ import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
-import style from './style.module.css'
+
 
 
 function ItemListContainer() {
@@ -38,7 +38,8 @@ function ItemListContainer() {
                             <Card.Body>
                                 <Card.Title>{item.producto}</Card.Title>
                                 <Card.Text>{item.precio}</Card.Text>
-                                <Button variant="dark"> ver mas</Button>
+                                {/* <Button variant="dark"> ver mas</Button> */}
+                                <Link to={`/item/${item.id}`}>ver mas</Link>
                             </Card.Body>
                         </Card>
                     </Col>
