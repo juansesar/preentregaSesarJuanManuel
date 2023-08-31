@@ -3,38 +3,43 @@
         "id": 1,
         "producto": "cerveza artesanal",
         "precio": 3000,
-        "imagen": ""
+        "imagen": "",
+        "categoria": "novedad"
         
     },
     {
         "id": 2,
         "producto": "brahama rubia",
         "precio": 4000,
-        "imagen": ""
-        
+        "imagen": "",
+        "categoria": "oferta"
     },
     {
         "id": 3,
         "producto": "andes negra",
         "precio": 1000,
-        "imagen": ""
+        "imagen": "",
+        "categoria": "novedad"
     },
     {
         "id": 4,
         "producto": "andes ipa",
         "precio": 1500,
-        "imagen": ""
+        "imagen": "",
+        "categoria": "sin"
     },
     {
         "id": 5,
         "producto": "andes origenes",
         "precio": 4000,
-        "imagen": ""
+        "imagen": "",
+        "categoria": "novedad"
     },
     {
         "id": 6,
         "producto": "grahama sin alcohol",
         "precio": 3000,
-        "imagen": ""
+        "imagen": "",
+        "categoria": "oferta"
     }
 ]

@@ -7,18 +7,27 @@ import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
+import style from './style.module.css'
 
 function ItemListContainer() {
     const [items, sentItems] = useState([])
 
-    const getProducto = async () => {
-        const response = await fetch("/data/base.json")
-        const productos = await response.json()
-        sentItems(productos)
-    }
+    const {id} = useState()
+
+    
     useEffect(() => {
+        const getProducto = async () => {
+            const response = await fetch("/data/base.json")
+            const productos = await response.json()
+    
+            const filtroProducto = productos.filter(producto => producto.categoria == id)
+            
+            if (filtroProducto.length > 0) return sentItems(filtroProducto)
+
+            sentItems(productos)
+        }
         getProducto()
-    }, [])
+    }, [id])
     return (
         <Container fluid className="nt-4">
             <Row>
