@@ -9,9 +9,12 @@ import {
     Route,
     Link
   } from "react-router-dom";
+import { ShopContext } from '../context/shopcontext';
   
 export default function Router () {
     return(
+        
+      <ShopContext>
         <BrowserRouter>
         <NavBar/>
         <Routes>
@@ -20,5 +23,6 @@ export default function Router () {
           <Route path="/item/:id" element={<ItemDetailContainer />} />
         </Routes>
       </BrowserRouter>
+      </ShopContext> 
     )
 }

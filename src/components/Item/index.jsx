@@ -1,11 +1,13 @@
+import ItemDetail from "../../ItemDetail"
+import { ShopContext } from "../../context/shopcontext"
 
 
-
-export default function Item({ detail }) {
+export default function Item() {
     return (
         <div>
-            <p>{detail.producto}</p>
-            <p>{detail.precio}</p>
+            <ShopContext.Provider >
+                <ItemDetail/> 
+            </ShopContext.Provider>
         </div>
     )
 }
