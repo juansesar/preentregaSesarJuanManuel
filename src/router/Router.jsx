@@ -7,7 +7,7 @@ import {
     BrowserRouter,
     Routes,
     Route,
-    Link
+    
   } from "react-router-dom";
 import { ShopContext } from '../context/shopcontext';
   
@@ -23,6 +23,6 @@ export default function Router () {
           <Route path="/item/:id" element={<ItemDetailContainer />} />
         </Routes>
       </BrowserRouter>
-      </ShopContext> 
+      </ShopContext>
     )
 }

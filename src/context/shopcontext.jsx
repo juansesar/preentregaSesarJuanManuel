@@ -1,28 +1,57 @@
 import { useEffect, useState, useParams } from "react";
-import { createContext } from "react";
+import { createContext } from "react"
 
-function Estado () {
-const [mockProducto, sentMockProducto] = useState([])
-    const {id} = useParams()
 
-useEffect(() => {
-    const getProducto = async () => {
-        const response = await fetch("/data/base.json")
-        const productos = await response.json()
-
-        const filtroProducto = productos.filter(producto => producto.categoria === id)
+const estado = [
+    {
+        "id": 1,
+        "producto": "cerveza artesanal",
+        "precio": 3000,
+        "imagen": "",
+        "categoria": "novedades"
         
-        if (filtroProducto.length > 0) return sentMockProducto(filtroProducto)
-
-        sentMockProducto(productos)
+    },
+    {
+        "id": 2,
+        "producto": "brahama rubia",
+        "precio": 4000,
+        "imagen": "",
+        "categoria": "ofertas"
+    },
+    {
+        "id": 3,
+        "producto": "andes negra",
+        "precio": 1000,
+        "imagen": "",
+        "categoria": "novedades"
+    },
+    {
+        "id": 4,
+        "producto": "andes ipa",
+        "precio": 1500,
+        "imagen": "",
+        "categoria": "sin"
+    },
+    {
+        "id": 5,
+        "producto": "andes origenes",
+        "precio": 4000,
+        "imagen": "",
+        "categoria": "novedades"
+    },
+    {
+        "id": 6,
+        "producto": "grahama sin alcohol",
+        "precio": 3000,
+        "imagen": "",
+        "categoria": "ofertas"
     }
-    getProducto()
-}, [id])}
+]
 
 export const ShopContext = createContext();
 
-export const ShopComponentContext = ({itemDetail}) =>{
-    const [productos, setProducto] = useState([])
+export const ShopComponentContext = ({children}) =>{
+    const [productos, setProductos] = useState([])
     const [cart, setCart] = useState([])
     const [totalCarrito, setTotalCarrito] = useState([])
     const [user, setUser] = useState([])
@@ -33,11 +62,11 @@ export const ShopComponentContext = ({itemDetail}) =>{
     }
 
     useEffect ( () => {
-        setProducto(Estado)
+        setProductos(estado)
     })
     
-    return <ShopContext.Provider value={{productos, setProducto, cart, setCart, totalCarrito, setTotalCarrito, vaciarCarrito, user, setUser}}>
-        {itemDetail}
+    return <ShopContext.Provider value={{productos, setProductos, cart, setCart, totalCarrito, setTotalCarrito, vaciarCarrito, user, setUser}}>
+        {children}
     </ ShopContext.Provider>
 }
 

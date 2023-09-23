@@ -4,25 +4,25 @@ import ItemDetail from "../../ItemDetail"
 import { ShopContext } from "../../context/shopcontext"
 
 export default function ItemDetailContainer() {
-//     const [detail, setDetail] = useState({})
-//     const { id } = useParams()
+     const [detail, setDetail] = useState({})
+     const { id } = useParams()
 
-//     useEffect(() => {
-//         const getProduct = async () => {
-//             const response = await fetch('/data/base.json')
-//             const productos = await response.json()
+    useEffect(() => {
+        const getProduct = async () => {
+             const response = await fetch('/data/base.json')
+            const productos = await response.json()
     
-//             const productoFiltrado = productos.find(productos => productos.id == parseInt(id))
+             const productoFiltrado = productos.find(productos => productos.id == parseInt(id))
     
-//             setDetail(productoFiltrado)
-//         }
+             setDetail(productoFiltrado)
+         }
 
-//         getProduct()
-// }, [id])
+         getProduct()
+ }, [id])
 
 return (
     <ShopContext>
-   <ItemDetail  />
-   </ShopContext> 
+   <ItemDetail detail = {detail}/>
+   </ShopContext>
 )
 }

@@ -12,30 +12,31 @@ import { ShopContext } from "../../context/shopcontext"
 
 
 function ItemListContainer() {
-    // const [items, sentItems] = useState([])
-    // const {id} = useParams()
-
+    const {productos} = useContext(ShopContext)
+    const [items, sentItems] = useState([])
+     const {id} = useParams()
     
-    // useEffect(() => {
-    //     const getProducto = async () => {
-    //         const response = await fetch("/data/base.json")
-    //         const productos = await response.json()
     
-    //         const filtroProducto = productos.filter(producto => producto.categoria === id)
+    useEffect(() => {
+        const getProducto = async () => {
+            // const response = await fetch("/data/base.json")
+            // const productos = await response.json()
             
-    //         if (filtroProducto.length > 0) return sentItems(filtroProducto)
+            const filtroProducto = productos.filter(producto => producto.categoria === id)
+            
+            if (filtroProducto.length > 0) return sentItems(filtroProducto)
 
-    //         sentItems(productos)
-    //     }
-    //     getProducto()
-    // }, [id])
+            sentItems(productos)
+        }
+        getProducto()
+    }, [id])
     
-    const cardState = useContext(ShopContext)
+    
 
     return (
         <Container fluid className="nt-4">
             <Row>
-                {cardState.items.map(item => (
+                {productos.map(item => (
                     <Col key={item.id} lg={4} className="mb-4" >
                         <Card>
                             <Card.Img variant="top" src={item.imagen} />

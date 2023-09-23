@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 
-export default function ItemDetail({ detail }) {
+export default function ItemDetail() {
     return (
         <Container fluid className="nt-4">
             <Row>
