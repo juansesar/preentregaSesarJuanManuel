@@ -19,8 +19,8 @@ function ItemListContainer() {
     
     useEffect(() => {
         const getProducto = async () => {
-            // const response = await fetch("/data/base.json")
-            // const productos = await response.json()
+            const response = await fetch("/data/base.json")
+            const productos = await response.json()
             
             const filtroProducto = productos.filter(producto => producto.categoria === id)
             
@@ -44,7 +44,9 @@ function ItemListContainer() {
                                 <Card.Title>{item.producto}</Card.Title>
                                 <Card.Text>{item.precio}</Card.Text>
                                 {/* <Button variant="dark"> ver mas</Button> */}
-                                <Link to={`/item/${item.id}`}>ver mas</Link>
+                                <Link to={`/item/${item.id}`}>ver mas</Link> 
+                                <br />
+                                <Link to={`/Carrito/${item.id}`}>comprar</Link>
                             </Card.Body>
                         </Card>
                     </Col>

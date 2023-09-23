@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 
-export default function ItemDetail() {
+export default function ItemDetail({detail}) {
     return (
         <Container fluid className="nt-4">
             <Row>
@@ -15,7 +15,7 @@ export default function ItemDetail() {
                             <Card.Body>
                                 <Card.Title>{detail.producto}</Card.Title>
                                 <Card.Text>{detail.precio}</Card.Text>
-                                {/* <Button variant="dark"> ver mas</Button> */}
+                                <Button variant="dark"> comprar </Button> 
                                 
                             </Card.Body>
                         </Card>
