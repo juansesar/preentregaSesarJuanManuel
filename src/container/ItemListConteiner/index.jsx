@@ -8,7 +8,7 @@ import Row from 'react-bootstrap/Row'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import { ShopContext } from "../../context/shopcontext"
-
+import ItemCount from "../../ItemCount/itemCount"
 
 
 function ItemListContainer() {
@@ -45,8 +45,8 @@ function ItemListContainer() {
                                 <Card.Text>{item.precio}</Card.Text>
                                 {/* <Button variant="dark"> ver mas</Button> */}
                                 <Link to={`/item/${item.id}`}>ver mas</Link> 
-                                <br />
-                                <Link to={`/Carrito/${item.id}`}>comprar</Link>
+                                
+                            
                             </Card.Body>
                         </Card>
                     </Col>

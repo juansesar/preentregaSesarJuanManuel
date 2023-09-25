@@ -3,6 +3,7 @@ import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
+import ItemCount from '../ItemCount/itemCount'
 
 export default function ItemDetail({detail}) {
     return (
@@ -15,7 +16,7 @@ export default function ItemDetail({detail}) {
                             <Card.Body>
                                 <Card.Title>{detail.producto}</Card.Title>
                                 <Card.Text>{detail.precio}</Card.Text>
-                                <Button variant="dark"> comprar </Button> 
+                                <ItemCount initial={1} stock={10} onAdd={(quantity) => console.log("cantidad agregada", quantity)}/>
                                 
                             </Card.Body>
                         </Card>
