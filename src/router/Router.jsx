@@ -12,7 +12,8 @@ import {
   } from "react-router-dom";
 import { ShopComponentContext } from '../context/shopcontext';
 import { CartProvider } from '../context/cartContext';
-  
+import Cart from '../components/Cart/cart';
+
 export default function Router () {
     return(
         

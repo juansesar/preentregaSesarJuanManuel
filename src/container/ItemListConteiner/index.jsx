@@ -13,14 +13,14 @@ import ItemCount from "../../ItemCount/itemCount"
 
 function ItemListContainer() {
     const {productos} = useContext(ShopContext)
-    const [items, sentItems] = useState([])
+    const [Items, sentItems] = useState([])
      const {id} = useParams()
     
     
     useEffect(() => {
         const getProducto = async () => {
-            const response = await fetch("/data/base.json")
-            const productos = await response.json()
+            // const response = await fetch("/data/base.json")
+            // const productos = await response.json()
             
             const filtroProducto = productos.filter(producto => producto.categoria === id)
             
