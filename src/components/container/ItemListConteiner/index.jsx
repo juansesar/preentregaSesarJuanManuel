@@ -36,7 +36,7 @@ const ItemListContainer = () => {
                 {productsAdapted.map(item => (
                     <Col key={item.id} lg={4} className='mb-4'>
                         <Card>
-                            <Card.Img variant='top' src={item.image} />
+                            <Card.Img variant='top' src={item.image} style={{ width : 30 +'%'}} />
                             <Card.Body>
                                 <Card.Title>{item.title}</Card.Title>
                                 <Card.Text>{item.description}</Card.Text>
