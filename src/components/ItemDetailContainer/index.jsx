@@ -4,13 +4,14 @@ import ItemDetail from "../../ItemDetail"
 import { ShopContext } from "../../context/shopcontext"
 
 export default function ItemDetailContainer() {
-     const [detail, setDetail] = useState({})
+    const {productos}  = useState(ShopContext)
+    const [detail, setDetail] = useState({})
      const { id } = useParams()
 
     useEffect(() => {
         const getProduct = async () => {
-             const response = await fetch('/data/base.json')
-            const productos = await response.json()
+            //  const response = await fetch('/data/base.json')
+            // const productos = await response.json()
     
              const productoFiltrado = productos.find(productos => productos.id == parseInt(id))
     

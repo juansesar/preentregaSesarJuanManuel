@@ -13,7 +13,7 @@ import ItemCount from "../../ItemCount/itemCount"
 
 function ItemListContainer() {
     const {productos} = useContext(ShopContext)
-    const [Items, sentItems] = useState([])
+    const [item, setItem] = useState([])
      const {id} = useParams()
     
     
@@ -24,9 +24,9 @@ function ItemListContainer() {
             
             const filtroProducto = productos.filter(producto => producto.categoria === id)
             
-            if (filtroProducto.length > 0) return sentItems(filtroProducto)
+            if (filtroProducto.length > 0) return setItem(filtroProducto)
 
-            sentItems(productos)
+            setItem(productos)
         }
         getProducto()
     }, [id])

@@ -4,8 +4,22 @@ import Row from 'react-bootstrap/Row'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import ItemCount from '../ItemCount/itemCount'
-
+import { useContext, useState } from 'react'
+import { CartContext } from '../context/cartContext'
 export default function ItemDetail({detail}) {
+
+    const {addItem} = useContext(CartContext)
+    const [quantityAdded, setQuantityAdded] = useState(0)
+
+    const handleOnAdd = (quantity) => {
+        setQuantityAdded(quantity)
+
+        //  const item = {
+        //     id, producto, precio
+        // }
+
+        addItem( quantity)
+     }
     return (
         <Container fluid className="nt-4">
             <Row>
@@ -16,8 +30,16 @@ export default function ItemDetail({detail}) {
                             <Card.Body>
                                 <Card.Title>{detail.producto}</Card.Title>
                                 <Card.Text>{detail.precio}</Card.Text>
-                                <ItemCount initial={1} stock={10} onAdd={(quantity) => console.log("cantidad agregada", quantity)}/>
                                 
+                                <div>
+                                {
+                                    quantityAdded > 0 ? (
+                                        <link to="/cart" className="option">Terminar compra</link>
+                                    ) : (
+                                        <ItemCount initial={1}  onAdd={handleOnAdd} />
+                                    )
+                                }
+                            </div>
                             </Card.Body>
                         </Card>
                     </Col>

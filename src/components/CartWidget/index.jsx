@@ -1,14 +1,18 @@
-import React from 'react';
-import quantity from '../../ItemCount/itemCount'; 
+import { useContext } from "react"
+import { Link } from 'react-router-dom';
+import { CartContext } from "../../context/cartContext";
 
-const CartWidget  = () => {
+const CartWidget = () => {
+    const {totalquantity} =  useContext(CartContext)
+
     return (
-        <div>
-       <i className="bi bi-cart3"></i>
-        <h4></h4>
-        </div>
-       
-    );
+        <Link to="/Cart" className='cartWidget' style={{display: totalquantity > 0 ? 'block' : 'none' }}>
+            <i className="bi bi-cart3"></i>
+            {totalquantity}
+        </Link>
+        
+
+    )
 }
- 
-export default CartWidget ;
+
+export default CartWidget

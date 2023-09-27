@@ -15,7 +15,10 @@ const ItemCount = ({stock, initial, onAdd}) => {
         }
     }
 
+   
+
     return(
+        
         <div className="Counter">
             <div className="controls">
                 <button className="button" onClick={decrement}>-</button>
@@ -28,8 +31,10 @@ const ItemCount = ({stock, initial, onAdd}) => {
                 </button>
             </div>
         </div>
+        
     )
 }
 
-export default ItemCount
+
+export default ItemCount 
 

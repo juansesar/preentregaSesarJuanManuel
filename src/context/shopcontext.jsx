@@ -7,7 +7,7 @@ const estado = [
         "id": 1,
         "producto": "cerveza artesanal",
         "precio": 3000,
-        "imagen": "",
+        "imagen": "../../public/img/cervezaArtesanal.jpg",
         "categoria": "novedades"
         
     },
@@ -15,35 +15,35 @@ const estado = [
         "id": 2,
         "producto": "brahama rubia",
         "precio": 4000,
-        "imagen": "",
+        "imagen": "../../public/img/brahamaRubia.jpg",
         "categoria": "ofertas"
     },
     {
         "id": 3,
         "producto": "andes negra",
         "precio": 1000,
-        "imagen": "",
+        "imagen": "../../public/img/andesNegra.jpg",
         "categoria": "novedades"
     },
     {
         "id": 4,
         "producto": "andes ipa",
         "precio": 1500,
-        "imagen": "",
+        "imagen":"../../public/img/andesIpa.jpg",
         "categoria": "sin"
     },
     {
         "id": 5,
         "producto": "andes origenes",
         "precio": 4000,
-        "imagen": "",
+        "imagen": "../../public/img/andesOrigenes.jpg",
         "categoria": "novedades"
     },
     {
         "id": 6,
         "producto": "grahama sin alcohol",
         "precio": 3000,
-        "imagen": "",
+        "imagen": "../../public/img/brahamaSinAlcohol.jpg",
         "categoria": "ofertas"
     }
 ]
