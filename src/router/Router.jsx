@@ -1,7 +1,7 @@
 
 import React from 'react'; 
 import NavBar from '../components/NavBar';
-import ItemListContainer from '../container/ItemListConteiner';
+
 import ItemDetailContainer from '../components/ItemDetailContainer';
 
 import {
@@ -10,15 +10,16 @@ import {
     Route,
     
   } from "react-router-dom";
-import { ShopComponentContext } from '../context/shopcontext';
-import { CartProvider } from '../context/cartContext';
+
 import Cart from '../components/Cart/cart';
+import { CartComponentContext } from '../components/context/CartContext';
+import ItemListContainer from '../components/container/ItemListConteiner';
 
 export default function Router () {
     return(
         
-      <ShopComponentContext>
-        <CartProvider>
+     
+        <CartComponentContext>
         <BrowserRouter>
         <NavBar/>
         <Routes>
@@ -28,7 +29,7 @@ export default function Router () {
          <Route path="/cart" element={<Cart/>} />  
         </Routes>
       </BrowserRouter>
-      </CartProvider>
-      </ShopComponentContext>
+      </CartComponentContext>
+     
     )
 }

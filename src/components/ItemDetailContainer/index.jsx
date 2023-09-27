@@ -1,29 +1,35 @@
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
-import ItemDetail from "../../ItemDetail"
-import { ShopContext } from "../../context/shopcontext"
+import ItemDetail from '../ItemDetail/index'
+import { getDoc, doc } from 'firebase/firestore'
+import { db } from '../../firebase/client'
+import { Card, Col, Container, Row } from "react-bootstrap"
 
-export default function ItemDetailContainer() {
-    const {productos}  = useState(ShopContext)
-    const [detail, setDetail] = useState({})
-     const { id } = useParams()
 
-    useEffect(() => {
-        const getProduct = async () => {
-            //  const response = await fetch('/data/base.json')
-            // const productos = await response.json()
-    
-             const productoFiltrado = productos.find(productos => productos.id == parseInt(id))
-    
-             setDetail(productoFiltrado)
-         }
+const ItemDetailContainer = () => {
+    const [product, setProduct] = useState(null)
 
-         getProduct()
- }, [id])
+    const { id } = useParams()
 
-return (
-    
-   <ItemDetail detail = {detail}/>
-   
-)
+    const docRef = doc(db, 'items', id)
+
+    getDoc(docRef)
+        .then(response => {
+            const data = response.data()
+            const productAdapted = { id: response.id, ...data }
+            setProduct(productAdapted)
+        }, [id])
+
+    if (product === null) {
+        return (
+            <div >
+                <h2>Cargando...</h2>
+            </div>
+        )
+    }
+
+    return (
+        <ItemDetail detail={product} />
+    )
 }
+export default ItemDetailContainer
