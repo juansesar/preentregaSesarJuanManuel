@@ -3,6 +3,7 @@ import ItemCount from '../ItemCount/itemCount.jsx'
 import { Link } from 'react-router-dom'
 import { doc, getDoc, getFirestore } from 'firebase/firestore'
 import { CartContext } from '../context/CartContext.jsx'
+import style from './style.module.css'
 
 const ItemDetail = ({ detail }) => {
     const db = getFirestore()
@@ -27,25 +28,22 @@ const ItemDetail = ({ detail }) => {
     return (
         <div >
             <div >
-                <img src={detail.image} alt='detalle'  />
+                <img className={style['img']} src={detail.image}  alt='detalle' />
             </div>
             <div >
                 <h1>{detail.title}</h1>
                 <h2>${detail.price}</h2>
                 <h3>{detail.description}</h3>
-
                 <div >
                     {
                         quantityAdded > 0 ? (
                             <Link to='/cart' > Terminar compra </Link>
                         ) : (
-                            <ItemCount initial={1} stock={stock} onAdd={handleOnAdd}/>
+                            <ItemCount initial={1} stock={stock} onAdd={handleOnAdd} />
                         )
                     }
                 </div>
-
             </div>
-
         </div>
     )
 }

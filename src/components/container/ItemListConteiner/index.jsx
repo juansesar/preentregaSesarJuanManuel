@@ -8,7 +8,7 @@ import Button from 'react-bootstrap/Button'
 
 
 import { getDocs, collection, query, where, doc, getDoc } from 'firebase/firestore'
-import { db } from '../../firebase/client'
+import { db } from '../../../firebase/client'
 
 const ItemListContainer = () => {
     const [products, setProducts] = useState([])
