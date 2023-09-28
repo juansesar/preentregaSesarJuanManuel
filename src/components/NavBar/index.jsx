@@ -17,10 +17,10 @@ export const NavBar = () => {
         <Link to="/category/home">Home</Link>
         </li>
         <li class="nav-item">
-          <Link to="/category/ofertas">Ofertas</Link>
+          <Link   to="category/oferta">Ofertas</Link>
         </li>
-        <li class="nav-item">
-        <Link to="/category/novedades">Novedades</Link>
+        <li className="nav-item">
+        <Link  to="category/novedades">Novedades</Link>
         </li>
         <li class="nav-item">
           <a href="">
