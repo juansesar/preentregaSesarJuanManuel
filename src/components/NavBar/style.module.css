@@ -25,3 +25,15 @@
 .navegador a {
     padding: 10%;
 }
+
+.birreria{
+    font-size: 300%;
+    color: chocolate;
+    text-decoration: none;
+}
+
+.links{
+    font-size: 80%;
+    color: rgb(29, 13, 1);
+    text-decoration: none;
+}
