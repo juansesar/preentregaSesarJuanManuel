@@ -26,15 +26,16 @@ const ItemDetail = ({ detail }) => {
     }
 
     return (
-        <div >
-            <div >
+        <div className={style['detail_container']}  >
+            <div className={style['img_container']}>
                 <img className={style['img']} src={detail.image}  alt='detalle' />
             </div>
-            <div >
-                <h1>{detail.title}</h1>
-                <h2>${detail.price}</h2>
-                <h3>{detail.description}</h3>
-                <div >
+            <div className={style['date_container']}>
+                <h1 >{detail.title}</h1>
+                <h2 className={style['h2_price']}>${detail.price}</h2>
+                <h3 className={style['h3_description']}>{detail.description}</h3>
+                
+                <div className={style['cant_button']}>
                     {
                         quantityAdded > 0 ? (
                             <Link to='/cart' > Terminar compra </Link>
@@ -43,7 +44,7 @@ const ItemDetail = ({ detail }) => {
                         )
                     }
                 </div>
-            </div>
+            </div>    
         </div>
     )
 }

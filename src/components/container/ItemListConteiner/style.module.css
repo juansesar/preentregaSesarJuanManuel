@@ -1,0 +1,16 @@
+.img{
+    width: 100%;
+    justify-self: center;
+    align-self: center;
+}
+
+.cart_data{
+    display: flex;
+    flex-direction: row;
+}
+
+.img_conteiner{
+    width:500px;
+    align-items: center;
+    
+}

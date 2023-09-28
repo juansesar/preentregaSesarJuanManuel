@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
+import style from './style.module.css'
 
 
 import { getDocs, collection, query, where, doc, getDoc } from 'firebase/firestore'
@@ -35,13 +35,17 @@ const ItemListContainer = () => {
             <Row>
                 {productsAdapted.map(item => (
                     <Col key={item.id} lg={4} className='mb-4'>
-                        <Card>
-                            <Card.Img variant='top' src={item.image} style={{ width : 50 +'%'}} />
-                            <Card.Body>
-                                <Card.Title>{item.title}</Card.Title>
-                                <Card.Text>{item.description}</Card.Text>
-                                <Link to={`/item/${item.id}`} >Ver más</Link>
-                            </Card.Body>
+                        <Card >
+                            <div className={style['cart_data']}>
+                                <div className={style['img_conteiner']}>
+                                    <Card.Img variant='top' src={item.image} className={style['img']} />
+                                </div>
+                                <Card.Body>
+                                    <Card.Title>{item.title}</Card.Title>
+                                    <Card.Text>{item.description}</Card.Text>
+                                    <Link to={`/item/${item.id}`} >Ver más</Link>
+                                </Card.Body>
+                            </div>
                         </Card>
                     </Col>
                 ))}
