@@ -1,11 +1,10 @@
 .form{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-content: center;
+
 }
 
 .form_conteiner{
-    width: 100%;
-    
+    display: flex;
+    justify-content: center;
 }

@@ -3,6 +3,7 @@ import { db } from '../../firebase/client'
 import { useContext, useState } from 'react'
 import CheckoutForm from '../checkOutForm'
 import { CartContext } from '../context/CartContext'
+import style from "./style.module.css"
 
 const Checkout = () => {
     const [loading, setLoading] = useState(false)
@@ -70,7 +71,7 @@ const Checkout = () => {
     if (orderId) {
         return (
             <div >
-                <p>su compra se realizo con exito el id de orden es: <b>{orderId}</b></p>
+                <p className={style['info']}>su compra se realizo con exito, el id de su orden es: <b>{orderId}</b></p>
             </div>
         )
     }
@@ -78,15 +79,15 @@ const Checkout = () => {
     if (loading) {
         return (
             <div >
-                <h2>Cargando...</h2>
+                <h2 className={style['info']}>Cargando...</h2>
             </div>
         )
     }
 
     return (
         <div >
-            <h1>Completar orden</h1>
-            <CheckoutForm onConfirm={creatOrder} />
+            <h1 className={style['info']}>Completar orden</h1>
+            <CheckoutForm  onConfirm={creatOrder} />
         </div>
     )
 }
