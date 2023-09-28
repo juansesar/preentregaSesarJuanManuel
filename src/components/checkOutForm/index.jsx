@@ -1,4 +1,5 @@
 import {  useState } from 'react'
+import style from "./style.module.css"
 
 const CheckoutForm = ({ onConfirm }) => {
     const [cliente, setCliente] = useState('')
@@ -16,8 +17,8 @@ const CheckoutForm = ({ onConfirm }) => {
     }
 
     return (
-        <div >
-            <form onSubmit={handleConfirm}>
+        <div className={style['form_conteiner']}>
+            <form className={style['form']} onSubmit={handleConfirm}>
                 <label>
                     Nombre
                     <input
