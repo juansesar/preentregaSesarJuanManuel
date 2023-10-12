@@ -15,24 +15,19 @@ const ItemDetailContainer = ({ detail }) => {
    
     
     useEffect(() => {
-        console.log(id)
-        const docRef = doc(db, "items", detail.id)
+        const docRef = doc(db, 'items', id)
 
-        getDoc(docRef)
-            .then(response => {
-                setStock(response.data().stock)
-            })
-    }, [detail.id])
-
-    const docRef = doc(db, 'items', id)
-
-    getDoc(docRef)
+                 getDoc(docRef)
     
         .then(response => {
             const data = response.data()
             const productAdapted = { id: response.id, ...data }
             setProduct(productAdapted)
-        }, [id])
+        })
+    }, [id])
+
+   
+  
 
     const handleOnAdd = (quantity) => {
         setQuantityAdded(quantity)
@@ -52,7 +47,7 @@ const ItemDetailContainer = ({ detail }) => {
     
     
     return (
-        <ItemDetail detail={product} quantityAdded = {quantityAdded} stock = {stock} handleOnAdd />
+        <ItemDetail detail={product} quantityAdded = {quantityAdded} stock = {stock}/>
     )
 }
 

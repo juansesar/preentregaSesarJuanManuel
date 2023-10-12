@@ -39,7 +39,7 @@ export const CartComponentContext = ({children}) =>{
 
     useEffect ( () => {
         setProductos()
-    })
+    },[])
 
     return <CartProvider.Provider
     value={{productos, setProductos, cart, setCart, totalCarrito, setTotalCarrito, vaciarCarrito, user, setUser, totalPrice, totalProducts, removerProducto, addCart, isInCart}}> 

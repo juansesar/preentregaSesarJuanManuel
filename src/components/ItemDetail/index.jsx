@@ -1,10 +1,10 @@
 import ItemCount from '../ItemCount/itemCount.jsx'
 import { Link } from 'react-router-dom'
 import style from './style.module.css'
-import React, {useParams} from 'react'
-import ItemDetailContainer from '../ItemDetailContainer/index.jsx'
+import React from 'react'
 
-const ItemDetail = ({ detail },{quantityAdded}, {stock}, handleOnAdd) => {
+
+const ItemDetail = ({ detail,quantityAdded, stock, handleOnAdd}) => {
     
     return (
         <div className={style['detail_container']}  >

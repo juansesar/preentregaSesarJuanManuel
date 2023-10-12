@@ -1,4 +1,3 @@
-
 import React from 'react'; 
 import NavBar from '../components/NavBar';
 import ItemDetailContainer from '../components/ItemDetailContainer';
@@ -23,7 +22,7 @@ export default function Router () {
         <Routes>
           <Route path="/" element={<ItemListContainer />} />
           <Route path="/category/:categoryId" element={<ItemListContainer />} />
-          <Route path="/item/:item.id" element={<ItemDetailContainer />} />
+          <Route path="/item/:id" element={<ItemDetailContainer />} />
          <Route path="/cart" element={<Cart/>} />  
          <Route path="/checkout" element={<Checkout/>}/>
         </Routes>
