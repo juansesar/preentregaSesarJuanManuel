@@ -1,30 +1,11 @@
-import React, { useState, useContext, useEffect } from 'react'
 import ItemCount from '../ItemCount/itemCount.jsx'
 import { Link } from 'react-router-dom'
-import { doc, getDoc, getFirestore } from 'firebase/firestore'
-import { CartContext } from '../context/CartContext.jsx'
 import style from './style.module.css'
+import React, {useParams} from 'react'
+import ItemDetailContainer from '../ItemDetailContainer/index.jsx'
 
-const ItemDetail = ({ detail }) => {
-    const db = getFirestore()
-    const { addCart } = useContext(CartContext)
-    const [quantityAdded, setQuantityAdded] = useState(0)
-    const [stock, setStock] = useState(0)
-
-    useEffect(() => {
-        const docRef = doc(db, "items", detail.id)
-
-        getDoc(docRef)
-            .then(response => {
-                setStock(response.data().stock)
-            })
-    }, [detail.id])
-
-    const handleOnAdd = (quantity) => {
-        setQuantityAdded(quantity)
-        addCart(detail, quantity)
-    }
-
+const ItemDetail = ({ detail },{quantityAdded}, {stock}, handleOnAdd) => {
+    
     return (
         <div className={style['detail_container']}  >
             <div className={style['img_container']}>
@@ -46,6 +27,7 @@ const ItemDetail = ({ detail }) => {
                 </div>
             </div>    
         </div>
+       
     )
 }
 

@@ -1,17 +1,16 @@
-import React, { useState, useEffect, useContext } from 'react'
-import { useParams, Link, Form } from 'react-router-dom'
+import React, { useState, useEffect} from 'react'
+import { useParams, Link} from 'react-router-dom'
 import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import Card from 'react-bootstrap/Card'
 import style from './style.module.css'
-
-
-import { getDocs, collection, query, where, doc, getDoc } from 'firebase/firestore'
+import { getDocs, collection, query, where} from 'firebase/firestore'
 import { db } from '../../../firebase/client'
 
+
 const ItemListContainer = () => {
-    const [products, setProducts] = useState([])
+    
     const [productsAdapted, setProductsAdapted] = useState([])
 
     const { categoryId } = useParams()
@@ -51,7 +50,6 @@ const ItemListContainer = () => {
                 ))}
             </Row>
         </Container>
-    )
-}
+    )}
 
 export default ItemListContainer

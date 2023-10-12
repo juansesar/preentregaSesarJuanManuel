@@ -1,11 +1,11 @@
 import React from 'react'
-import { CartContext } from '../context/CartContext'
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import style from "./style.module.css"
+import { CartComponentContext } from '../../context/CartProvider'
 
 
 const CartItem = ({ producto }) => {
-    const { cart, setCart } = useContext(CartContext)
+    const { cart, setCart } = useContext(CartComponentContext)
 
     const handleRemoveProduct = (id) => {
         const updatedCart = cart.filter(producto => producto.id !== id)

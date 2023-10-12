@@ -1,15 +1,15 @@
-import { Timestamp, collection, doc, documentId, getDocs, query, where, writeBatch, addDoc, getDoc } from 'firebase/firestore'
+import { Timestamp, collection, documentId, getDocs, query, where, writeBatch, addDoc} from 'firebase/firestore'
 import { db } from '../../firebase/client'
 import { useContext, useState } from 'react'
 import CheckoutForm from '../checkOutForm'
-import { CartContext } from '../context/CartContext'
+import { CartProvider } from '../../context/CartProvider'
 import style from "./style.module.css"
 
 const Checkout = () => {
     const [loading, setLoading] = useState(false)
     const [orderId, setOrderId] = useState('')
 
-    const { cart, totalPrice, clearCart } = useContext(CartContext)
+    const { cart, totalPrice, clearCart } = useContext(CartProvider)
 
     const creatOrder = async ({ cliente, telefono, email }) => {
         setLoading(true)
