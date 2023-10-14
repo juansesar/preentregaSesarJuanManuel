@@ -2,10 +2,10 @@
 import { useContext } from "react"
 import CartItem from "../CartItem"
 import { Link } from 'react-router-dom'
-import { CartComponentContext } from "../../context/CartProvider"
+import {  CartProvider} from "../../context/CartProvider"
 import style from "./style.module.css"
 const Cart = () => {
-    const { cart, totalPrice, vaciarCarrito } = useContext(CartComponentContext)
+    const { cart, totalPrice, vaciarCarrito } = useContext(CartProvider)
 
     if (cart.length === 0) {
         return (

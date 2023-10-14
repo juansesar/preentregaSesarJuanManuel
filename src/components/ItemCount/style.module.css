@@ -1,0 +1,14 @@
+.conteiner{
+    display:flex;
+    height: 29px;
+    color: brown;
+}
+
+.conteinerButtons{
+    display: flex;
+}
+
+.number{
+    margin-left: 10px;
+    margin-right: 10px;
+}

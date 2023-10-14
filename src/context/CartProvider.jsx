@@ -41,8 +41,7 @@ export const CartComponentContext = ({children}) =>{
         setProductos()
     },[])
 
-    return <CartProvider.Provider
-    value={{productos, setProductos, cart, setCart, totalCarrito, setTotalCarrito, vaciarCarrito, user, setUser, totalPrice, totalProducts, removerProducto, addCart, isInCart}}> 
+    return <CartProvider.Provider value={{productos, setProductos, cart, setCart, totalCarrito, setTotalCarrito, vaciarCarrito, user, setUser, totalPrice, totalProducts, removerProducto, addCart, isInCart}}> 
         {children}
     </ CartProvider.Provider>
 }

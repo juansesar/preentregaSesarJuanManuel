@@ -5,7 +5,7 @@ import { doc, getDoc, getFirestore } from 'firebase/firestore'
 import { CartProvider } from '../../context/CartProvider.jsx'
 
 
-const ItemDetailContainer = ({ detail }) => {
+const ItemDetailContainer = () => {
     const { id } = useParams()
     const db = getFirestore()
     const { addCart } = useContext(CartProvider)
@@ -29,10 +29,7 @@ const ItemDetailContainer = ({ detail }) => {
    
   
 
-    const handleOnAdd = (quantity) => {
-        setQuantityAdded(quantity)
-        addCart(detail, quantity)
-    }
+    
     
 
     if (product === null) {
@@ -47,7 +44,7 @@ const ItemDetailContainer = ({ detail }) => {
     
     
     return (
-        <ItemDetail detail={product} quantityAdded = {quantityAdded} stock = {stock}/>
+        <ItemDetail detail={product} quantityAdded = {quantityAdded} stock = {stock} setQuantityAdded = {setQuantityAdded} addCart = {addCart}/>
     )
 }
 

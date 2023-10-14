@@ -4,7 +4,13 @@ import style from './style.module.css'
 import React from 'react'
 
 
-const ItemDetail = ({ detail,quantityAdded, stock, handleOnAdd}) => {
+const ItemDetail = ({ detail,quantityAdded, stock, setQuantityAdded, addCart}) => {
+
+    const handleOnAdd = (quantity) => {
+        setQuantityAdded(quantity)
+        addCart(detail, quantity)
+    }
+    
     
     return (
         <div className={style['detail_container']}  >
