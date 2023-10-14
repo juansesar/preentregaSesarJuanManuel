@@ -4,14 +4,13 @@ import style from './style.module.css'
 import React from 'react'
 
 
-const ItemDetail = ({ detail,quantityAdded, stock, setQuantityAdded, addCart}) => {
+const ItemDetail = ({ detail,quantityAdded,  setQuantityAdded, addCart}) => {
 
     const handleOnAdd = (quantity) => {
         setQuantityAdded(quantity)
         addCart(detail, quantity)
     }
-    
-    
+    const dato = detail.id
     return (
         <div className={style['detail_container']}  >
             <div className={style['img_container']}>
@@ -27,13 +26,12 @@ const ItemDetail = ({ detail,quantityAdded, stock, setQuantityAdded, addCart}) =
                         quantityAdded > 0 ? (
                             <Link to='/cart' > Terminar compra </Link>
                         ) : (
-                            <ItemCount initial={1} stock={stock} onAdd={handleOnAdd} id={detail.id} />
+                            <ItemCount initial={1} dato={dato} onAdd={handleOnAdd} />
                         )
                     }
                 </div>
             </div>    
         </div>
-       
     )
 }
 

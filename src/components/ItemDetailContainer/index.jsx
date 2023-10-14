@@ -11,8 +11,6 @@ const ItemDetailContainer = () => {
     const { addCart } = useContext(CartProvider)
     const [product, setProduct] = useState(null)
     const [quantityAdded, setQuantityAdded] = useState(0)
-    const [stock, setStock] = useState(0)
-   
     
     useEffect(() => {
         const docRef = doc(db, 'items', id)
@@ -26,12 +24,6 @@ const ItemDetailContainer = () => {
         })
     }, [id])
 
-   
-  
-
-    
-    
-
     if (product === null) {
         return (
             <div >
@@ -44,7 +36,7 @@ const ItemDetailContainer = () => {
     
     
     return (
-        <ItemDetail detail={product} quantityAdded = {quantityAdded} stock = {stock} setQuantityAdded = {setQuantityAdded} addCart = {addCart}/>
+        <ItemDetail detail={product} quantityAdded = {quantityAdded}  setQuantityAdded = {setQuantityAdded} addCart = {addCart}/>
     )
 }
 

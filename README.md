@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+Birreria: venta de bebidas alcoholicas
+Bienvenido a la birreria, tu tienda en línea de cerveza . Este e-commerce ha sido creado con React, lo que garantiza una experiencia de compra rápida, fluida y atractiva. Con est web, encontrarás una amplia variedad de cervezas, artesanales e industriales, todo a un click de distancia.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Características Destacadas
+1. Catálogo de dos categorías 
+nuestro sitio ofrece una amplia gama de productos organizados en categorías:
 
-## Available Scripts
+ofertas: Donde podras encontrar las mejores ofertas en cerveza.
 
-In the project directory, you can run:
+Novedades: en esta categoria se deplegaran las novedades dentro del mundo de la cerveza.
 
-### `npm start`
+2. Carrito de Compras
+El carrito de compras te permite agregar y administrar tus artículos con facilidad. Puedes ver un resumen de tus compras y eliminar artículos que ya no desees. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. Finalización de Compra y eTicket
+Una vez que hayas seleccionado todos tus productos deseados y estés listo para finalizar tu compra, te guiaremos a través del proceso de generacion de id de compra.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+4. Tecnologías Utilizadas
 
-### `npm test`
+React: La librería de JavaScript líder en la creación de interfaces de usuario. Garantiza una experiencia de usuario suave y receptiva.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+React Router DOM: Para gestionar la navegación y asegurar una experiencia de usuario fluida y sin problemas al moverse entre las diferentes secciones del sitio.
 
-### `npm run build`
+Firebase: Nuestra base de datos en la nube y plataforma de autenticación para garantizar que tus datos estén seguros y tu experiencia de compra sea confiable.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Hooks de React: Hemos aprovechado los hooks de React para gestionar el estado y la lógica en la aplicación, lo que mejora la eficiencia y el rendimiento.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Instrucciones de Uso
+Navega por las diferentes categorías.
+Agrega los productos que desees comprar al carrito de compras.
+Revisa tu carrito de compras.
+Continúa con el proceso de pago.
+Una vez completado el proceso de compra, recibirás Id de la misma.

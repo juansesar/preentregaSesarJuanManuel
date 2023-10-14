@@ -23,9 +23,9 @@ export const NavBar = () => {
         <Link className={style['links']} to="category/novedades">Novedades</Link>
         </li>
         <li className="nav-item">
-          <a className={style['links']} href="">
+          
           <CartWidget/>
-          </a>
+          
         </li>
       </ul>
     </div>
