@@ -27,7 +27,7 @@ const ItemDetail = ({ detail,quantityAdded, stock, setQuantityAdded, addCart}) =
                         quantityAdded > 0 ? (
                             <Link to='/cart' > Terminar compra </Link>
                         ) : (
-                            <ItemCount initial={1} stock={stock} onAdd={handleOnAdd} />
+                            <ItemCount initial={1} stock={stock} onAdd={handleOnAdd} id={detail.id} />
                         )
                     }
                 </div>
